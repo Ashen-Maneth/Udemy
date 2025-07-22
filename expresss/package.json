@@ -1,0 +1,15 @@
+{
+  "name": "tea-manager",
+  "version": "1.0.0",
+  "description": "a simple manager for different tea",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "express",
+    "tea"
+  ],
+  "author": "Ashen Maneth",
+  "license": "ISC"
+}
