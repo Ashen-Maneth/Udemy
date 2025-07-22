@@ -1,0 +1,94 @@
+/* universal selecter */
+
+*{
+    margin : 0px;
+    padding : 0px;
+    box-sizing : border-box;
+}
+
+/* type selecter */
+p{
+    font-style: 16px;
+    margin-bottom: 10px;
+}
+
+a {
+    font-size: 25px;
+    font-weight: 900;
+    color: #9500ff;
+}
+
+/* class selecter */
+.highlight{
+    background-color : #4e054d;
+    font-size : 20px;
+    color : #ffffff;
+}
+
+/* id selecter */
+#header {
+    height: 50px;
+    background-color : #23d6e3;
+    color : rgb(15, 3, 117);
+    font-size: 20px;
+    font-weight : bold;
+    text-align : center;
+    padding : 10px;
+}
+
+/* attribute selecter */
+input[type="text"]{
+    width : 200px;
+    height : 30px;
+    border-radius : 5px;
+    border : 2px solid #0925f6;
+    padding : 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Descendant selecter */
+
+article p{
+    font-style: italic;
+    background-color: #1a1a1a;
+    color : #ffffff;
+    padding : 10px;
+    font-size: 17px;
+    
+}
+
+/* Child selecter */
+div > p{
+    font-size: 20px;
+    color : #ffffff;
+    background-color: #ff5c5c;
+    padding : 10px;
+}
+
+/* genaral selecter */
+h2 ~ p{
+    margin-top: 20px;
+    font-size: 20px;
+    color : #ffffff;
+    background-color: #9fe535;
+    padding : 10px;
+}
+
+/* psuedo-class selecter */
+a:hover{
+    color : #ffffff;
+    background-color: #0022ff;
+    padding : 10px;
+    font-size: 40px;
+ 
+}
+
+/* psuedo-element selecter */
+p::first-letter{
+    font-size: 23px;
+    color : #000000;
+    background-color: rgb(227, 238, 15);
+
+}
+

@@ -1,0 +1,17 @@
+body {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.hidden{
+    display: none;
+}
+
+
