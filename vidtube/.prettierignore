@@ -1,0 +1,7 @@
+/.vsvode
+/node_module
+./dist
+
+*.env
+.env
+.env.*
