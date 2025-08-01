@@ -1,0 +1,11 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"4.952\"}","timestamp":"2025-07-29T00:43:57.811Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"0.410\"}","timestamp":"2025-07-29T00:45:04.441Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"0.228\"}","timestamp":"2025-07-29T00:45:06.614Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"0.158\"}","timestamp":"2025-07-29T00:45:07.914Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"0.284\"}","timestamp":"2025-07-29T00:45:11.476Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"0.162\"}","timestamp":"2025-07-29T00:45:12.732Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/teas\",\"status\":\"200\",\"responseTime\":\"0.436\"}","timestamp":"2025-07-29T00:45:27.256Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"name":"Jonesville","price":"460.62"},"timestamp":"2025-07-29T00:49:15.520Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"accept":"*/*","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"55","content-type":"application/json","host":"127.0.0.1:4000","postman-token":"19be2972-8141-429a-b35f-db9837af368b","user-agent":"PostmanRuntime/7.44.1"},"timestamp":"2025-07-29T00:49:15.523Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"A post request was made","timestamp":"2025-07-29T00:49:15.523Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"7.095\"}","timestamp":"2025-07-29T00:49:15.529Z"}
