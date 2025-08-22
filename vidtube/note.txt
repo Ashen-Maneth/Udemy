@@ -1,6 +1,0 @@
-each model get controller , each f a controller get routes
-
-
-
-
-
