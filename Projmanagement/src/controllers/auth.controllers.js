@@ -3,8 +3,9 @@ import {ApiResponse} from "../utils/api-response.js";
 import {ApiError} from "../utils/api-error.js";
 import {asyncHandler} from "../utils/async-handler.js";
 import {sendEmail} from "../utils/mail.js";
+import { emailVerificationMailgenContent } from "../utils/mail.js";
 
-const genarateAccessAndRefreshTokens = asyncHandler(async (userId) => {
+const genarateAccessAndRefreshTokens = async (userId) => {
     try {
         const user = await User.findById(userId);
         const accessToken = user.genarateAccessToken();
@@ -16,9 +17,9 @@ const genarateAccessAndRefreshTokens = asyncHandler(async (userId) => {
         return {accessToken, refreshToken};
 
     } catch (error) {
-        throw new ApiError(500, "Error genarating tokens", []);
+        throw new ApiError(500, "Error genarating tokens");
     }
-});
+};
 
 const registerUser = asyncHandler(async (req, res ) => {
     const {email, username, password, role} = req.body
@@ -49,7 +50,7 @@ const registerUser = asyncHandler(async (req, res ) => {
         email: user?.email,
         subject: "Please verify your email address",
         mailgenContent: emailVerificationMailgenContent(
-            user?.username, 
+            user.username, 
             `${req.protocol}://${req.get("host")}/api/v1/users/verify-email/${unHashedToken}`
         ),
     });
