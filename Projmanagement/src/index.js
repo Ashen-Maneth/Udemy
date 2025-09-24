@@ -5,7 +5,7 @@ import connectDB from "./db/index.js";
 dotenv.config();
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 
 connectDB()
@@ -16,5 +16,8 @@ connectDB()
 })
 .catch((error) => {
     console.error("Error connecting to database:", error);
-    process.exit(1);
+    // Continue without database for now - don't exit
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port} (without database)`);
+    });
 });

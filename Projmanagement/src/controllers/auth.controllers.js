@@ -2,7 +2,7 @@ import {User} from "../models/user.models.js";
 import {ApiResponse} from "../utils/api-response.js";
 import {ApiError} from "../utils/api-error.js";
 import {asyncHandler} from "../utils/async-handler.js";
-import {sendEmail} from "../utils/mail.js";
+import {sendEmail, emailVerificationMailgenContent} from "../utils/mail.js";
 
 const genarateAccessAndRefreshTokens = asyncHandler(async (userId) => {
     try {
