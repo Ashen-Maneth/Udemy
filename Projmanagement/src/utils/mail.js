@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 
 
 const sendEmail = async (Options) => {
-    const maiGenerator = new Mailgen({
+    const mailGenerator = new Mailgen({
         theme : "default",
         product : {
             name : "Task Manager",
@@ -12,7 +12,7 @@ const sendEmail = async (Options) => {
         }
     })
 
-    const emailTextual = maiGenerator.generatePlaintext(Options.mailgenContent);
+    const emailTextual = mailGenerator.generatePlaintext(Options.mailgenContent);
 
     const emailHtml = mailGenerator.generate(Options.mailgenContent);
 
