@@ -2,9 +2,9 @@ import {User} from "../models/user.models.js";
 import {ApiResponse} from "../utils/api-response.js";
 import {ApiError} from "../utils/api-error.js";
 import {asyncHandler} from "../utils/async-handler.js";
-import {sendEmail} from "../utils/mail.js";
-import { emailVerificationMailgenContent } from "../utils/mail.js";
+import {sendEmail, emailVerificationMailgenContent, forgotPasswordMailgenContent} from "../utils/mail.js";
 import jwt from "jsonwebtoken";
+import crypto from "crypto";
 
 const genarateAccessAndRefreshTokens = async (userId) => {
     try {
@@ -53,7 +53,7 @@ const registerUser = asyncHandler(async (req, res ) => {
         subject: "Please verify your email address",
         mailgenContent: emailVerificationMailgenContent(
             user.username, 
-            `${req.protocol}://${req.get("host")}/api/v1/users/verify-email/${unHashedToken}`
+            `${req.protocol}://${req.get("host")}/api/v1/auth/verify-email/${unHashedToken}`
         ),
     });
 
@@ -98,7 +98,7 @@ const login = asyncHandler(async(req,res) => {
     
     const options = {
         httpOnly: true,
-        secure : true
+        secure: process.env.NODE_ENV === "production" // Set secure only in production
     }
 
     return res 
@@ -133,7 +133,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure : true
+        secure: process.env.NODE_ENV === "production"
     }
 
     return res
@@ -162,15 +162,15 @@ const getCurruntUser = asyncHandler(async (req, res) => {
 });
 
 const verifyEmail = asyncHandler(async (req, res) => {
-    const {verificationToke} = req.params;
+    const {verificationToken} = req.params;
 
-    if(!verificationToke) {
+    if(!verificationToken) {
         throw new ApiError(400, "Verification token is required");
     }
 
     let hashedToken = crypto
     .createHash("sha256")
-    .update(verificationToke)
+    .update(verificationToken)
     .digest("hex");
 
     const user = await User.findOne({
@@ -224,7 +224,7 @@ const resendEmailVerification = asyncHandler(async (req, res) => {
         subject: "Please verify your email address",
         mailgenContent: emailVerificationMailgenContent(
             user.username, 
-            `${req.protocol}://${req.get("host")}/api/v1/users/verify-email/${unHashedToken}`
+            `${req.protocol}://${req.get("host")}/api/v1/auth/verify-email/${unHashedToken}`
         ),
     });
 
@@ -248,7 +248,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 
    try {
        const decodedToken = jwt.verify(incomingRefreshToken, process.env.REFRESH_TOKEN_SECRET) // verify the token
-       const user = await User.findById(decodedToken?._Id);
+       const user = await User.findById(decodedToken?._id);
         
        if(!user) {
            throw new ApiError(401, "invalid refresh token");
@@ -260,7 +260,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 
        const options = {
            httpOnly: true,
-           secure : true
+           secure: process.env.NODE_ENV === "production"
        }
 
        const {accessToken, refreshToken:newRefreshToken} = await genarateAccessAndRefreshTokens(user._id);
@@ -396,4 +396,4 @@ export {
     forgotPasswordRequest,
     resetForgotPassword,
     changeCurrentPassword
-}; 
+};

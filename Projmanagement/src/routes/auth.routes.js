@@ -31,7 +31,7 @@ router.route("/reset-password/:resetToken")
 router.route("/logout")
 .post(verifyJWT, logoutUser);
 
-router.route("/currunt-user")
+router.route("/current-user")
 .post(verifyJWT, getCurruntUser);
 
 router.route("/change-password")
