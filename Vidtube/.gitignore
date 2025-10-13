@@ -1,0 +1,62 @@
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+npm-shrinkwrap.json
+
+# Logs
+logs
+*.log
+logs/**
+npm-debug.log*
+yarn-debug.log*
+
+# dotenv
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+
+# OS files
+Icon\r
+
+# VSCode
+.vscode/
+
+# Windows PowerShell history
+ConsoleHost_history.txt
+
+# Debug
+.nyc_output
+.sass-cache
+.cache
+
+# Coverage
+coverage/
+
+# Misc
+*.seed
+*.pid
+*.pid.lock
+
+# Runtime data
+/tmp
+/temp
+
+# IDEs
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
